@@ -30,8 +30,8 @@ public class Sim extends JPanel implements ActionListener {
         timer = new Timer(DELAY, this);
         timer.start();
 
-        body1 = new Body(50, 100, 0, 0, 3, 0, 0);
-        body2 = new Body(50, -50, -0, 0, -3, 0, 0);
+        body1 = new Body(100, 100, 100, 3, 0, 0, 0);
+        body2 = new Body(100, -100, -100, -3, 0, 0, 0);
 
 
         InputMap im = getInputMap(WHEN_FOCUSED);
