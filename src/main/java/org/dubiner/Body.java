@@ -1,8 +1,10 @@
 package org.dubiner;
 
+// represents a celestial body
 public class Body {
     private double m, x, y, vX, vY, aX, aY;
     private final double pX, pY, pvX, pvY, paX, paY;
+
     public Body(double m, double x, double y, double vX, double vY, double aX, double aY) {
         this.m = m;
         this.x = x;
@@ -23,8 +25,8 @@ public class Body {
     public void update(double fgx, double fgy) {
         aX = fgx / m;
         aY = fgy / m;
-        vX = vX + aX;
-        vY = vY + aY;
+        vX += aX;
+        vY += aY;
         x += vX;
         y += vY;
     }

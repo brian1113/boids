@@ -81,10 +81,12 @@ public class Sim extends JPanel implements ActionListener {
         ftheta = Math.atan2(body2.getY() - body1.getY(),
                 body2.getX() - body1.getX());
 
+        // calculate x and y components of fg
         fgx = Math.cos(ftheta) * fg;
         fgy = Math.sin(ftheta) * fg;
 
         body1.update(fgx, fgy);
+        // negative because its other direction lol
         body2.update(-fgx, -fgy);
 
         // convert cartesian coordinates into pixel coordinates
@@ -118,6 +120,7 @@ public class Sim extends JPanel implements ActionListener {
         return timer;
     }
 
+    // will be called every DELAY by the timer
     @Override
     public void actionPerformed(ActionEvent e) {
         data.setText("<html>Body 1: " + body1 + "<br>Body 2: " + body2 + "</html>");
